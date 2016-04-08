@@ -67,10 +67,9 @@ if __name__ == '__main__':
     def costFunc(p):
         return NN.nnCostFunction(p, conf.INPUT_LAYER_SIZE,
                                  conf.HIDDEN_LAYER_SIZE, conf.NUM_LABELS,
-                                 X, y, LEARN_RATE)
+                                 X, y, conf.PART8_LEARN_RATE)
 
-    LEARN_RATE = 1
-    nn_params = NN.trainNN(costFunc, init_W, 400)
+    nn_params = NN.trainNN(costFunc, init_W, conf.MAX_ITER)
     W1 = np.reshape(nn_params[:conf.HIDDEN_LAYER_SIZE *
                               (conf.INPUT_LAYER_SIZE + 1)],
                     (conf.HIDDEN_LAYER_SIZE, (conf.INPUT_LAYER_SIZE + 1)))

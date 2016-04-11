@@ -30,8 +30,8 @@ def computeNumericalGradient(J, W):
     for i in range(W.shape[0]):
         for j in range(W.shape[1]):
             perturb[i][j] = epsilon
-            loss1 = J(W - perturb)[0]
-            loss2 = J(W + perturb)[0]
+            loss1, _ = J(W - perturb)
+            loss2, _ = J(W + perturb)
             numgrad[i][j] = (loss2 - loss1) / (2 * epsilon)
             perturb[i][j] = 0
     return numgrad

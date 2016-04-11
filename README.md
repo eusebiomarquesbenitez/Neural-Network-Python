@@ -9,6 +9,6 @@ python main.py
 ```
 
 ## Play it:
-You can modify learn_rate and number of iteration in `conf.py`
+You can modify learn rate and the number of iteration in `conf.py`, and see what will happen.
 
 **Enjoy it!**
